@@ -1,0 +1,25 @@
+version: "3.7"
+
+services:   
+    php:
+        build: 
+            context: ./dockerfiles
+            dockerfile: ./laravel.dockerfile
+        container_name: backend_php
+        working_dir: /var/www/html/
+        networks:
+          - tests_database_network
+          - main_database_network
+        ports:
+          - "9080:80"
+        volumes:
+          - "./html:/var/www/html/"
+          - "./apache/sites-enabled/:/etc/apache2/sites-enabled/"
+
+networks:
+  tests_database_network:
+    name: development_network
+    external: true
+  main_database_network:
+    name: production_network
+    external: true

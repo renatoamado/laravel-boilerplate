@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+    tests_database:
+        image: postgres
+        container_name: test_database
+        networks:
+            - tests_network_db
+        ports:
+            - "5432:5432"
+        volumes:
+            - test_database:/var/lib/postgresql/data/:rw
+            - ./test_database/:/var/tmp/
+        environment:
+          - POSTGRES_USERNAME=${DB_USERNAME}
+          - POSTGRES_PASSWORD=${DB_PASSWORD}
+          - POSTGRES_DB=${DB_DATABASE}
+
+volumes:
+    test_database:
+
+networks:
+    tests_network_db:
+        name: development_network
