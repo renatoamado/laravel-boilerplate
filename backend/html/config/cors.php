@@ -1,10 +1,5 @@
 <?php
 
-// preg_match('/.{10,50},.{10,50}/', env('WHITELISTED_URLS')) ?
-//     $whitelist = explode(',', env('WHITELISTED_URLS'))     :
-//     $whitelist = [env('WHITELISTED_URLS')];
-// array_push($whitelist, env('APP_URL'));
-
 return [
 
     /*
@@ -20,12 +15,10 @@ return [
     |
     */
 
-    'paths' => ['api/*', 'api/v1/*', 'sanctum/csrf-cookie'],
+    'paths' => ['api/*', 'sanctum/csrf-cookie'],
 
-    // 'allowed_methods' => ['GET POST PUT'],
-    'allowed_methods' => ['GET', 'POST', 'PUT'],
+    'allowed_methods' => ['*'],
 
-    // 'allowed_origins' => $whitelist,
     'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
@@ -36,6 +29,6 @@ return [
 
     'max_age' => 0,
 
-    'supports_credentials' => true,
+    'supports_credentials' => false,
 
 ];

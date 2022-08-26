@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'api',
+        'guard' => 'web',
         'passwords' => 'users',
     ],
 
@@ -36,13 +36,8 @@ return [
     */
 
     'guards' => [
-        // 'pioneira_guard' => [
-        //     'driver' => 'cas',
-        //     'provider' => 'users'
-        // ],
-
-        'api' => [
-        'driver' => 'passport',
+        'web' => [
+            'driver' => 'session',
             'provider' => 'users',
         ],
     ],
@@ -69,6 +64,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+
+        // 'users' => [
+        //     'driver' => 'database',
+        //     'table' => 'users',
+        // ],
     ],
 
     /*

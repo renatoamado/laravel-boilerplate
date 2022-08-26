@@ -30,7 +30,10 @@ return [
     |
     */
 
-    'deprecations' => env('LOG_DEPRECATIONS_CHANNEL', 'null'),
+    'deprecations' => [
+        'channel' => env('LOG_DEPRECATIONS_CHANNEL', 'null'),
+        'trace' => false,
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -113,12 +116,6 @@ return [
 
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
-        ],
-
-        'exception' => [
-            'driver' => 'single',
-            'path' => storage_path('logs/exception.log'),
-            'level' => 'debug',
         ],
     ],
 

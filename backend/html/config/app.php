@@ -82,7 +82,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'pt-BR',
 
     /*
     |--------------------------------------------------------------------------
@@ -127,6 +127,24 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Maintenance Mode Driver
+    |--------------------------------------------------------------------------
+    |
+    | These configuration options determine the driver used to determine and
+    | manage Laravel's "maintenance mode" status. The "cache" driver will
+    | allow maintenance mode to be controlled across multiple machines.
+    |
+    | Supported drivers: "file", "cache"
+    |
+    */
+
+    'maintenance' => [
+        'driver' => 'file',
+        // 'store'  => 'redis',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Autoloaded Service Providers
     |--------------------------------------------------------------------------
     |
@@ -167,8 +185,6 @@ return [
         /*
          * Package Service Providers...
          */
-        // Pioneira\Auth\Laravel\PioneiraAuthServiceProvider::class,
-        Pioneira\Security\Laravel\PioneiraSecurityServiceProvider::class,
 
         /*
          * Application Service Providers...

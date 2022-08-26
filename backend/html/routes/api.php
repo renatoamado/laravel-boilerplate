@@ -2,7 +2,6 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\ParametrizacaoApiAPIController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +14,6 @@ use App\Http\Controllers\API\ParametrizacaoApiAPIController;
 |
 */
 
-
-Route::resource('parametrizacao_api', ParametrizacaoApiAPIController::class)->middleware('pioneira.security');
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});

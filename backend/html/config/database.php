@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'pgsql'),
+    'default' => env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -78,21 +78,6 @@ return [
             'sslmode' => 'prefer',
         ],
 
-        'pgsql_secondary' => [
-            'driver' => 'pgsql',
-            'url' => env('DATABASE_SECONDARY_URL'),
-            'host' => env('DB_SECONDARY_HOST', '127.0.0.1'),
-            'port' => env('DB_SECONDARY_PORT', '5432'),
-            'database' => env('DB_SECONDARY_DATABASE', 'forge'),
-            'username' => env('DB_SECONDARY_USERNAME', 'forge'),
-            'password' => env('DB_SECONDARY_PASSWORD', ''),
-            'charset' => 'utf8',
-            'prefix' => '',
-            'prefix_indexes' => true,
-            'search_path' => 'public',
-            'sslmode' => 'prefer',
-        ],
-
         'sqlsrv' => [
             'driver' => 'sqlsrv',
             'url' => env('DATABASE_URL'),
@@ -105,7 +90,7 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
             // 'encrypt' => env('DB_ENCRYPT', 'yes'),
-            // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'true'),
+            // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
 
     ],
