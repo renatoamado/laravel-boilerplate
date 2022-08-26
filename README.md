@@ -4,9 +4,9 @@
 Colocar .env no folder main_database e no test_database.
 
 Em seguida:
-docker-compose -f backend/docker-compose yml up -d
-docker-compose -f main_database/docker-compose yml up -d
-docker-compose -f test_database/docker-compose yml up -d
+docker-compose -f backend/docker-compose.yml up -d
+docker-compose -f main_database/docker-compose.yml up -d
+docker-compose -f test_database/docker-compose.yml up -d
 ```
 
 ## Configurações

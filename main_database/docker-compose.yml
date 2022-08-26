@@ -1,13 +1,13 @@
 version: "3.7"
 
 services:   
-    main_database_adm:
+    main_database:
         image: postgres
         container_name: main_database
         networks:
             - main_network_db
         ports:
-            - "5433:5432"
+            - "5888:5432"
         volumes:
             - main_database:/var/lib/postgresql/data/:rw
             - ./main_database/:/var/tmp/
